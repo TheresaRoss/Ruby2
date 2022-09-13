@@ -1,16 +1,15 @@
 <h1>Main#test</h1>
-<p>Find me in app/views/main/test.html.erb</p>
+
 
 <%= form_with url: '/main/test2', method: :post, data:{turbo:false} do |form| %>
     <p style="visibility:hidden;"> <%= i=0 %> </p>
-    <p style="visibility:hidden;"><%= for i in 1..@cock do %></p>
+    <p style="visibility:hidden;"><%= for i in 1..@k do %></p>
     
         <%= form.label :query, "Subject:" %>
         <%= form.text_field "sub#{i}", :value => params["sub#{i}"]%>
         <%= form.label :query, "Score:" %>
         <%= form.text_field "sco#{i}", :value => params["sco#{i}"] %>
         
-
    
         <% if @subjV[i] %>
             <p style="color: red;"> Subject cannot be empty </p>
@@ -29,5 +28,3 @@
 <% end %>
 
   
-
-

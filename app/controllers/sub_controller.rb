@@ -1,16 +1,31 @@
 class SubController < ApplicationController
   def Second
-    @cock = session[:cock]
-    @kick = @cock.to_i
+    @hi = session[:k]
+    @kick = @hi.to_i
     i=1;
     b=0;
     jesus = "what"
     max=0;
+    
+    Studentdatum.connection
     loop do 
       i=i.to_i
       a= session["score#{i}"]
       aa = session["subj#{i}"]
       a=a.to_i
+
+      anew = Studentdatum.new
+      bname = Studentdatum.find_by name: aa
+      if bname == nil
+        anew.name = aa
+        anew.score = a
+        anew.save
+      else
+        bname.score = a
+        bname.save
+      end
+     
+
       puts "score of"
       puts aa
       puts "is"

@@ -1,0 +1,21 @@
+<h1> WTF </h1>
+<%= form_with url: '/score/edit', method: :get, data:{turbo:false} do |form| %>
+
+    <%= form.label :query, "Subject:" %>
+    <%= form.text_field "sub", :value => params["sub"]%>
+    <%= form.label :query, "Score:" %>
+    <%= form.text_field "sco", :value => params["sco"] %>
+    
+    <% if @sb %>
+    <p style="color: red;"> Subject cannot be empty </p>
+    <% end %>
+    <% if @sc %>
+    <p style="color: red;"> Score cannot be empty </p>
+
+           
+<% end %>
+    <%= form.submit "Save" %>
+<% end %>
+<%= form_with url: '/score/list', method: :get, data:{turbo:false} do |form| %>
+    <%= form.submit "Back" %>
+<% end %>

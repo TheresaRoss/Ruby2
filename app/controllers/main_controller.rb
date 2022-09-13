@@ -3,17 +3,17 @@ class MainController < ApplicationController
 
     if(params.has_key?("Subject"))
       @cick = params['Subject']
-      @cock = @cick.to_i
-      session[:cock] = @cock
+      @k = @cick.to_i
+      session[:k] = @k
       a = 1
     else
-      @cock = session[:cock]
+      @k = session[:k]
       a = 2 
     end
-    @subjV = Array.new(@cock+1,false)
-    @scoreV = Array.new(@cock+1,false)
+    @subjV = Array.new(@k+1,false)
+    @scoreV = Array.new(@k+1,false)
     if a==2
-      for i in 1..@cock do
+      for i in 1..@k do
         if session.key?("subjV#{i}")
         @subjV[i] = session["subjV#{i}"]
         end
@@ -22,7 +22,7 @@ class MainController < ApplicationController
         end
       end
     else
-      for i in 1..@cock do
+      for i in 1..@k do
       
         @subjV[i] = false
 
@@ -37,7 +37,7 @@ class MainController < ApplicationController
 
   def test2
     valid = true
-    @k = session[:cock]
+    @k = session[:k]
     
     @subjV = []
     @scoreV =[]

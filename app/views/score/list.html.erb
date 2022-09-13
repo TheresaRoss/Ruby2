@@ -1,0 +1,15 @@
+<h1>Score#list</h1>
+<p>Find me in app/views/score/list.html.erb</p>
+
+<p style="visibility:hidden;"><%= for i in 0..@k do %></p>
+    <p> <%=@subjV[i]%> got a score of <%=@scoreV[i]%> 
+
+    <%=link_to "edit",score_edit_url(:first_t => "a",:edi => @subjV[i])%>
+   
+    <%=link_to "delete",score_delete_url(:del => @subjV[i])%> 
+<% end %>
+<p> Your max score is <%=@max%> </p>
+<p> Your total score is <%=@sum%> </p>
+
+
+

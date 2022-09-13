@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post 'main/test2'
   get 'sub/Second'
   post 'sub/Second'
+  get 'score/list'
+  get 'score/edit'
+  get 'score/delete'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
